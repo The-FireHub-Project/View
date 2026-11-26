@@ -1,0 +1,16 @@
+name: PHPUnit
+
+on:
+  pull_request:
+
+permissions: read-all
+
+jobs:
+  build:
+    uses: The-FireHub-Project/.github/.github/workflows/RunCommandOnMatrix.yml@master
+    with:
+      title: "Run PHPUnit"
+      tools: "phpunit:13.x"
+      command: "phpunit"
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
